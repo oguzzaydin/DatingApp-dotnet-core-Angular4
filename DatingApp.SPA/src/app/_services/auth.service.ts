@@ -54,4 +54,8 @@ export class AuthService {
       modelStateErrors || 'Server Error'
     );
   }
+
+  loggedIn() {
+    return tokenNotExpired();
+  }
 }
