@@ -27,6 +27,10 @@ getUser(id): Observable<User> {
    .catch(this.handleError);
 }
 
+updateUser(id: number, user: User) {
+  return this.http.put(this.baseUrl + 'users/' + id, user).catch(this.handleError);
+}
+
 private handleError(error: any) {
   const applicationError = error.headers.get('Application-Error');
   if (applicationError) {

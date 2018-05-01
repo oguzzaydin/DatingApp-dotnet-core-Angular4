@@ -13,12 +13,12 @@ export class MemberListComponent implements OnInit {
 
   users: User[];
   constructor(private userService: UserService,
-     private alertifyService: AlertifyService, private route:ActivatedRoute) { }
+     private alertifyService: AlertifyService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.users = data['users'];
-    });
+    })
   }
 
 
