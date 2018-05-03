@@ -1,9 +1,9 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
-
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -48,12 +48,14 @@ import { AuthModule } from './auth/auth.module';
     BrowserModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
     BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     TabsModule.forRoot(),
     NgxGalleryModule,
     FileUploadModule,
-    AuthModule
+    AuthModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [
     AuthService,

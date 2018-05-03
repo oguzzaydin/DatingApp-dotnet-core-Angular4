@@ -33,13 +33,17 @@ export class AuthService {
             this.decodedToken = this.jwtHelper.decodeToken(user.tokenString);
             this.currentUser = user.user;
             this.userToken = user.tokenString;
-            this.changeMemberPhoto(this.currentUser.photoUrl);
+            if (this.currentUser.photoUrl != null) {
+              this.changeMemberPhoto(this.currentUser.photoUrl);
+            } else {
+              this.changeMemberPhoto('../../assets/user.jpg');
+            }
         }
     }).catch(this.handleError);
   }
 
-  register(model: any) {
-    return this.http.post(this.baseUrl + 'register', model, this.requestOptions()).catch(this.handleError);
+  register(user: User) {
+    return this.http.post(this.baseUrl + 'register', user, this.requestOptions()).catch(this.handleError);
   }
 
   private requestOptions() {
@@ -67,6 +71,6 @@ export class AuthService {
   }
 
   loggedIn() {
-    return tokenNotExpired();
+    return tokenNotExpired('token');
   }
 }
