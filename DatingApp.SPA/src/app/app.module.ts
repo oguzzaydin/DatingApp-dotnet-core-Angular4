@@ -31,6 +31,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { AuthModule } from './auth/auth.module';
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ListsResolver } from './_resolvers/lists.resolver';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     MemberDetailResolver,
     MemberListResolver,
     MemberEditResolver,
-    PreventUnsavedChanges
+    PreventUnsavedChanges,
+    ListsResolver
   ],
   bootstrap: [AppComponent]
 })
